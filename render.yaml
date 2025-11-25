@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ai-code-recognizer-backend
+    env: docker
+    repo: jaswanth-i5/ai_code_recognizer
+    branch: main
+    dockerfilePath: backend/Dockerfile
+    plan: free
+    autoDeploy: true
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT

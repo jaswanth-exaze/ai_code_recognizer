@@ -146,6 +146,21 @@ def save_detector(pipeline: Pipeline, filepath: Path = MODEL_PATH) -> None:
 
 
 def load_detector(filepath: Path = MODEL_PATH) -> LanguageDetector:
+    # If MODEL_URL is set in the environment, try to download and overwrite the model file
+    model_url = os.environ.get("MODEL_URL")
+    if model_url and not filepath.exists():
+        try:
+            import requests
+
+            resp = requests.get(model_url, timeout=30)
+            resp.raise_for_status()
+            filepath.parent.mkdir(parents=True, exist_ok=True)
+            filepath.write_bytes(resp.content)
+            print(f"Downloaded model from {model_url} to {filepath}")
+        except Exception as e:
+            # log the error and continue — fallback to default model
+            print(f"Warning: failed to download model from MODEL_URL={model_url}: {e}")
+
     if filepath.exists():
         pipeline = joblib.load(filepath)
         return LanguageDetector(pipeline)
