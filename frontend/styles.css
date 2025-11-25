@@ -1,0 +1,52 @@
+:root{
+  --bg1: #060814;
+  --bg2: #071033;
+  --glass: rgba(255,255,255,0.06);
+  --accent1: #3A7BFD;
+  --accent2: #B446FF;
+  --accent3: #00C9FF;
+  --glass-border: rgba(255,255,255,0.08);
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+html,body{height:100%;margin:0}
+body{background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#dceaff;display:flex;align-items:center;justify-content:center;}
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 20%, rgba(58,123,253,0.15), transparent 10%),radial-gradient(ellipse at 90% 80%, rgba(180,70,255,0.12), transparent 12%);filter:blur(30px);}
+.app{width:1100px;max-width:96%;min-height:640px;padding:48px;border-radius:20px;backdrop-filter: blur(16px) saturate(110%);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow: 0 6px 30px rgba(0,0,0,0.6);}
+.app__header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.logo{font-weight:700;font-size:26px;letter-spacing:0.4px}
+.logo .accent{color:var(--accent1);text-shadow:0 8px 22px rgba(58,123,253,0.12);}
+.subtitle{font-size:13px;color:rgba(220,234,255,0.75);margin-top:4px}
+.upload-card{display:flex;padding:26px;border-radius:16px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border)}
+.glass{backdrop-filter: blur(14px) saturate(120%)}
+.upload-left{flex:0 0 48%;padding:16px}
+.upload-right{flex:1;padding:16px;margin-left:12px}
+.uploader{display:flex;flex-direction:column;gap:12px}
+#file-input{display:none}
+.uploader-btn{display:inline-block;padding:12px 16px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow: 0 6px 24px rgba(58,123,253,0.22);border:none;color:white;font-weight:600;cursor:pointer;text-align:center}
+.uploader textarea{width:100%;border-radius:12px;background:rgba(7,16,48,0.55);border:1px solid rgba(255,255,255,0.03);color:#eaf0ff;padding:12px;font-family:monospace;font-size:13px}
+.btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#e6f0ff;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent3),var(--accent1));box-shadow:0 10px 30px rgba(0,201,255,0.08);font-weight:700}
+.scan-area{height:380px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);display:flex;flex-direction:column}
+.scan-header{color:rgba(230,245,255,0.7);font-size:13px;padding:6px 8px}
+.preview{flex:1;display:flex;align-items:center;justify-content:center;color:rgba(220,235,255,0.5);border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.06));margin-bottom:12px;border:1px dashed rgba(255,255,255,0.03);padding:12px;word-break:break-all}
+
+/* Camera UI panel */
+.camera-panel{position:relative;display:none;border-radius:8px;overflow:hidden;background:#000;height:260px;width:100%}
+.camera-panel.active{display:block}
+.camera-panel video{width:100%;height:100%;object-fit:cover;display:block}
+.camera-overlay{position:absolute;inset:0;pointer-events:none}
+.scan-frame{position:absolute;left:8%;top:8%;right:8%;bottom:22%;border-radius:12px;border:2px solid rgba(255,255,255,0.08);box-shadow:inset 0 0 40px rgba(0,0,0,0.45)}
+.scan-line{position:absolute;left:8%;right:8%;top:25%;height:2px;background:linear-gradient(90deg, transparent, rgba(0,200,255,0.8), transparent);animation:scan 2s linear infinite}
+.camera-controls{position:absolute;left:50%;transform:translateX(-50%);bottom:6%;display:flex;gap:8px}
+@keyframes scan{0%{transform:translateY(-20%)}50%{transform:translateY(60%)}100%{transform:translateY(-20%)}}
+
+/* Small camera on mobile button spacing */
+.uploader .uploader-btn{display:inline-flex;align-items:center;gap:8px}
+.result{display:flex;flex-direction:column;gap:6px;padding:8px;border-top:1px solid rgba(255,255,255,0.02);}
+.result .lang{font-weight:700;font-size:18px;color:#ffffff}
+.result .confidence{font-size:12px;color:rgba(220,235,255,0.6)}
+.indicators{font-size:12px;color:rgba(220,235,255,0.5)}
+.small{opacity:0.7;margin-top:22px;text-align:center;color:rgba(220,235,255,0.6)}
+
+/* responsive */
+@media (max-width:1000px){.app{padding:26px}.upload-card{flex-direction:column}.upload-left{width:100%}.upload-right{margin-left:0;padding-top:10px}}

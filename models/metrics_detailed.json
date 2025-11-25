@@ -1,0 +1,117 @@
+{
+  "accuracy": 0.9412,
+  "report": {
+    "C": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "C++": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "Go": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1-score": 0.6666666666666666,
+      "support": 6.0
+    },
+    "Java": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 4.0
+    },
+    "JavaScript": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 24.0
+    },
+    "Kotlin": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 8.0
+    },
+    "PHP": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "Python": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 17.0
+    },
+    "Ruby": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "SQL": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 8.0
+    },
+    "Shell": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "Swift": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "accuracy": 0.9411764705882353,
+    "macro avg": {
+      "precision": 0.875,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.8888888888888888,
+      "support": 102.0
+    },
+    "weighted avg": {
+      "precision": 0.9117647058823529,
+      "recall": 0.9411764705882353,
+      "f1-score": 0.9215686274509803,
+      "support": 102.0
+    }
+  },
+  "classes": [
+    "C",
+    "C#",
+    "C++",
+    "CSS",
+    "Dart",
+    "Go",
+    "HTML",
+    "JSON",
+    "Java",
+    "JavaScript",
+    "Kotlin",
+    "Lua",
+    "MATLAB",
+    "PHP",
+    "Perl",
+    "PowerShell",
+    "Python",
+    "R",
+    "Ruby",
+    "SQL",
+    "Scala",
+    "Shell",
+    "Swift",
+    "TypeScript",
+    "YAML"
+  ]
+}
